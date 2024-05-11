@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
-from main import fetch_values
-from randomforest_on__datset_final_year import processModel
+from main import fetch_values_from_database
+from randomforest_on__datset_final_year import process_random_forest_model
+from unitTesting import unitTest
 
 app = Flask(__name__)
 
@@ -16,16 +17,15 @@ def result():
             input_value = request.form.get(field_name)
             input_data.append(int(input_value))
 
-        outputList = fetch_values(input_data)
+        outputNaiveBayes = fetch_values_from_database(input_data)
         # for random forest classifier...
-        rfcList = processModel([0,0] + input_data)
-        outputList.append(rfcList)
+        rfcList = process_random_forest_model([0,0] + input_data)
 
      
-      
+        unitTest(input_data , outputNaiveBayes , rfcList)
+        outputNaiveBayes.append(rfcList)
 
-        
-        return render_template('result.html', input_data=outputList)
+        return render_template('result.html', input_data=outputNaiveBayes)
     return 'Method not allowed'
 
 if __name__ == "__main__":

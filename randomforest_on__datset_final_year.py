@@ -29,7 +29,7 @@ from sklearn.metrics import RocCurveDisplay
 from sklearn.linear_model import LogisticRegression
 
 
-def processModel(input_values):
+def process_random_forest_model(input_values):
     df = pd.read_csv('cancer_patient_data_sets.csv')
 
 
@@ -101,7 +101,6 @@ def processModel(input_values):
     return y_pred
 
 # input_values = [0, 0, 7, 7, 7, 7, 5, 7, 4, 8, 7, 7, 3, 1, 1, 1, 1, 1, 1, 8, 8, 8, 8]
-input_values =[0,1,4,5,6,5,5,4,6,7,2,3,4,8,8,7,9,2,1,4,6,7,2]
+# input_values =[0,1,4,5,6,5,5,4,6,7,2,3,4,8,8,7,9,2,1,4,6,7,2]
 
-print(processModel(input_values))
 

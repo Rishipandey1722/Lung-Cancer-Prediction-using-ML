@@ -13,4 +13,4 @@ for i in range(len(prob0)):
     sum2 = sum2 + (prob2[i] * decimalList[i])
 
 
-print(sum0 , sum1 , sum2)
+print(add + [0])

@@ -7,7 +7,7 @@ import pymongo
 
 
 
-def fetch_values(inputList):
+def fetch_values_from_database(inputList):
     client = pymongo.MongoClient("mongodb://localhost:27017/")  
     db_name = "hazard_analysis_db"
     collection_name = "Probability"
