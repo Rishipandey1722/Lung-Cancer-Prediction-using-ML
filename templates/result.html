@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <h1>Result:</h1>
+    <ul>
+        {% for value in input_data[:-1] %}
+            <li> {{ value }}</li>
+        {% endfor %}
+        
+    </ul>
+    <!-- Print the last element separately -->
+    <p>Level of Cancer: {{ input_data[-1] }}</p>
+    <h3>Note:</h5>
+    <p>Level 0 - Low</p>
+    <p>Level 1 - Medium</p>
+    <p>Level 2 - High</p>
+
+</body>
+</html>
